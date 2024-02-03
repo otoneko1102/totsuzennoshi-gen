@@ -1,10 +1,20 @@
 window.addEventListener('load', function() {
-  gen();
+  fgen();
   
   document.getElementById('generateButton').addEventListener('click', function() {
     gen();
   });
 });
+
+function fgen() {
+  let str = "突然の死";
+  let count = Math.floor(countWidth(str) / 2);
+  count = count + 2;
+  const up = '人';
+  const under = '^Y';
+  const content = `＿${up.repeat(count)}＿\n＞　 ${str} 　＜\n￣${under.repeat(count)}￣`;
+  document.getElementById('output').value = content;
+}
 
 function gen() {
   let str = document.getElementById('content').value;
