@@ -16,7 +16,7 @@ function gen() {
   count = count + 2;
   const up = '人';
   const under = '^Y';
-  const content = `＿${up.repeat(count + plus)}＿\n＞　 ${str} 　＜\n￣${under.repeat(count)}￣`;
+  const content = `＿${up.repeat(count + plus)}＿\n＞　 ${str.replace(/\n/g, ' 　＜\n＞　 ')} 　＜\n￣${under.repeat(count)}￣`;
   document.getElementById('output').value = content;
 
   const tempInput = document.createElement('input');
