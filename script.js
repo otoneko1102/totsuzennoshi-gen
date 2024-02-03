@@ -7,7 +7,7 @@ window.addEventListener('load', function() {
 });
 
 function gen() {
-  let str = document.getElementById('content').value || '突然の死';
+  let str = document.getElementById('content').value;
   let count = Math.floor(countWidth(str) / 2);
   let plus = 0;
   if(count > 15){
