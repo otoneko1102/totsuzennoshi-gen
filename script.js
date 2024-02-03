@@ -1,5 +1,9 @@
 window.addEventListener('load', function() {
   gen();
+  
+  document.getElementById('generateButton').addEventListener('click', function() {
+    gen();
+  });
 });
 
 function gen() {
@@ -9,11 +13,20 @@ function gen() {
   if(count > 15){
     plus = 1;
   };
-  count = count + 2
-  const up = '人'
-  const under = '^Y'
+  count = count + 2;
+  const up = '人';
+  const under = '^Y';
   const content = `＿${up.repeat(count + plus)}＿\n＞　 ${str} 　＜\n￣${under.repeat(count)}￣`;
   document.getElementById('output').value = content;
+
+  const tempInput = document.createElement('input');
+  tempInput.value = content;
+  document.body.appendChild(tempInput);
+  tempInput.select();
+  document.execCommand('copy');
+  document.body.removeChild(tempInput);
+
+  alert('クリップボードにコピーしました！');
 }
 
 function countWidth(str) {
